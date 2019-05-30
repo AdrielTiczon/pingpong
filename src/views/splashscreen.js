@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'antd'
+import { Link } from 'react-router-dom'
 
 class SplashScreen extends React.Component{
     
@@ -7,13 +8,17 @@ class SplashScreen extends React.Component{
         return(
             <div>
                 <h1>Ping Pong Game</h1>
-                <Button type="primary" size="large">
-                New Game
-                </Button>
+                    <Link to="/setgame">
+                        <Button type="primary" size="large">
+                            New Game
+                        </Button>
+                    </Link>
                 <br/>
-                <Button type="primary" size="large">
-                Leaderboards
-                </Button>
+                <Link to="/leaderboards">
+                        <Button type="primary" size="large">
+                            Leaderboards
+                        </Button>
+                    </Link>
             </div>
         )
     }
