@@ -1,21 +1,40 @@
 import React from 'react'
 import { Button,Input } from 'antd'
+import { Redirect } from "react-router-dom";
 
 class PlayerPage extends React.Component{
 
     constructor(props){
         super(props);
+
         this.state = {
+            redirect:false,
             player1:'',
             player2:'',
         }
     }
-    
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+
+        renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to={{
+                pathname: '/startgame',
+                state: { player1:this.state.player1,player2:this.state.player2 }
+            }} />
+        }
+    }
+
     handleChange = (event)  => {
         const { name, value} = event.target
         this.setState({ [name]: value })
         console.log(this.state.player1 + this.state.player2)
     }
+
 
     render(){
         return(
@@ -30,9 +49,9 @@ class PlayerPage extends React.Component{
                         value={this.state.player2} 
                         onChange={this.handleChange} size="sm" 
                 />
-                <Button type="primary" size="large">
-                    Start Game
-                </Button>
+                {this.renderRedirect()}
+                <Button onClick={this.setRedirect}>Start Game</Button>
+                
             </div>
         )
     }
