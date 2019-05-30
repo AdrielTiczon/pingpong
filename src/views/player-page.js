@@ -46,7 +46,7 @@ class PlayerPage extends React.Component{
                 />
                 <Input placeholder="Enter Player 2" name="player2" 
                         value={this.state.player2} 
-                        onChange={this.handleChange} size="sm" 
+                        onChange={this.handleChange} size="small" 
                 />
                 {this.renderRedirect()}
                 <Button onClick={this.setRedirect}>Start Game</Button>
