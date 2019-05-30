@@ -27,7 +27,6 @@ class GamePage extends React.Component{
     
 
     handleCancel = e => {
-        console.log(e);
         this.setState({
             visible: false,
             visible1:false,
@@ -38,7 +37,6 @@ class GamePage extends React.Component{
         this.handleServing();
         const score = this.state.player1score
         this.setState({ player1score: score + 1 })
-        console.log(this.state.servingplayer)
     }
     handleIncrementplayer2 = (event) => {
         this.handleServing();
@@ -105,7 +103,7 @@ class GamePage extends React.Component{
         return(
             <div>
                 <h1>Lets Game!</h1>
-                <h1>{ this.state.win } { this.state.win === "DRAW" ? "" : "WINS!"}</h1>
+                <h1>{ this.state.win } { this.state.win === null ? "" : "WINS!"}</h1>
                 <h2>{ this.state.deuce ? "DUECE" : null }</h2>
                 <h2>{ this.state.player1 }</h2>
                 <p>Score</p>
