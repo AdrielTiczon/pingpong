@@ -14,9 +14,10 @@ class SplashScreen extends React.Component{
                         </Button>
                     </Link>
                 <br/>
+                <br/>
                 <Link to="/leaderboards">
                         <Button type="primary" size="large">
-                            New Game
+                            Leaderboards
                         </Button>
                     </Link>
             </div>
